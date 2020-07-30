@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import routes from '../../routes';
 import apiService from '../../services/api-service';
-import styles from './CategoryDetailsPage.module.css';
 
 export default class ShowDetailsPage extends Component {
   state = {
@@ -61,16 +60,15 @@ export default class ShowDetailsPage extends Component {
     return (
       <div>
         <button
-          className={styles.button}
           type="button"
           onClick={this.handleGoCategoryPage}
         >
           <span> Go to Category page</span>
         </button>
 
-        <form className={styles.search}
+        <form
           onSubmit={this.handleSubmit}>
-          <input className={styles.input}
+          <input
             type="text"
             autoComplete="off"
             value={query}
@@ -83,11 +81,10 @@ export default class ShowDetailsPage extends Component {
         </form>
 
         {values.map(item => (
-          <li key={item.id} className={styles.list}>
+          <li key={item.id}>
             <h3>{item.name}</h3>
             <p>{item.price}</p>
             <img
-              className={styles.img}
               src={`${item.image}`}
               width="280"
               alt={item.name}

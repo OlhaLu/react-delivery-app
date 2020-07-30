@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import routes from '../../routes';
 import apiService from '../../services/api-service';
-import styles from './CategoryPage.module.css';
 
 export default class CategoryPage extends Component {
   state = {
@@ -27,10 +25,10 @@ export default class CategoryPage extends Component {
 
     return (
       <>
-        <h2 className={styles.header}>All Category</h2>
-        <ul className={styles.listFilms}>
+        <h2>All Category</h2>
+        <ul>
           {category.map(item => (
-            <li key={item.id} className={styles.list}>
+            <li key={item.id}>
               <Link
                 to={{
                   pathname: `/market/product_list/${item.id}`,
