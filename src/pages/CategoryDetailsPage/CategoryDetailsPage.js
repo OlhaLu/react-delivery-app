@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
 import routes from '../../routes';
 import apiService from '../../services/api-service';
-import SearchNameByCategory from '../../components/SearchNameByCategory/SearchNameByCategory'
 import styles from './CategoryDetailsPage.module.css';
 
 export default class ShowDetailsPage extends Component {
   state = {
     values: [],
+    query: '',
   };
 
   componentDidMount() {
@@ -30,6 +29,20 @@ export default class ShowDetailsPage extends Component {
     });
   };
 
+  handleChange = e => {
+    this.setState({ query: e.target.value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const id = this.props.match.params.id;
+    const { query } = this.state;
+
+    apiService.getCategoryByIdAndSearchName(id, query).then(values => {
+      this.setState({ values });
+    });
+  }
+
   handleGoCategoryPage = () => {
     const { state } = this.props.location;
     const { history } = this.props;
@@ -43,11 +56,10 @@ export default class ShowDetailsPage extends Component {
   };
 
   render() {
-    const { values } = this.state;
+    const { values, query } = this.state;
 
     return (
       <div>
-        <SearchNameByCategory />
         <button
           className={styles.button}
           type="button"
@@ -55,6 +67,20 @@ export default class ShowDetailsPage extends Component {
         >
           <span> Go to Category page</span>
         </button>
+
+        <form className={styles.search}
+          onSubmit={this.handleSubmit}>
+          <input className={styles.input}
+            type="text"
+            autoComplete="off"
+            value={query}
+            onChange={this.handleChange}
+            placeholder="Search by name"
+          />
+          <button type="submit">
+            Find ...
+              </button>
+        </form>
 
         {values.map(item => (
           <li key={item.id} className={styles.list}>
