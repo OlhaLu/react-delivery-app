@@ -22,10 +22,7 @@ const getCategoryById = id => {
 const getCategoryByIdAndSearchName = (id, query) => {
   return axios
     .get(`/market/product_list?category=${id}&searchkey=${query}`)
-    .then(response => {
-      console.log(response.data.results)
-      return response.data.results;
-    })
+    .then(response => response.data.results)
     .catch(error => error);
 }
 
