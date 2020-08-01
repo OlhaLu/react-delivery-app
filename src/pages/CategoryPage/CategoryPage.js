@@ -78,7 +78,16 @@ margin: 0 250px;
 const CategoryItem = styled.li`
 line-height: 2;
 
-&:hover {
+&::after {
+  display: block;
+  content: "";
+  height: 5px;
   background-color: #556B2F;
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
 }
+
+&:hover::after {
+  transform: scaleX(1);
+  }
 `
