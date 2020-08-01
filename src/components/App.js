@@ -6,7 +6,6 @@ import HomePage from '../pages/HomePage/HomePage';
 import routes from '../routes';
 import styled from 'styled-components';
 
-
 const App = () => (
   <BrowserRouter>
     <AppContainer>
@@ -22,12 +21,9 @@ const App = () => (
 
 export default App;
 
-
 const AppContainer = styled.div`
-background-image: ''
-max-width: 1200px;
+width: 1400px;
 padding-left: 16px;
 padding-right: 16px;
-margin-left: auto;
-margin-right: auto
+margin: 0 auto;
 `
