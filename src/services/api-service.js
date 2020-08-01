@@ -2,7 +2,7 @@ import axios from 'axios';
 
 /* DEFAULTS SETTINGS */
 axios.defaults.baseURL = 'http://6788c3e3d2a8.ngrok.io/v1';
-axios.defaults.headers.get['Content-Type'] = 'application/json';
+axios.defaults.headers.get['Accept'] = 'application/json';
 // axios.defaults.headers.common['Authorization'] = 'kL9Q5CZfvuYcN3n0udZnuwjrdZ8YNmGxX4AWb78iQjt42Ap0sZkJ7sO2Q1CyO8G7';
 
 const getCategory = () => {
