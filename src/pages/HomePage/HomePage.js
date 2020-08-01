@@ -1,7 +1,6 @@
 import React from 'react';
 import routes from '../../routes';
 import imgBG from '../../assets/img/homeBG.jpg';
-
 import styled from 'styled-components';
 
 const HomePage = () => (
@@ -73,9 +72,4 @@ color:  #FFF8DC;
     background-color: #48D1CC;
     color: white;
   }
-`
-
-const ImgLink = styled.img`
-width: 30px;
-height: 30px;
 `
