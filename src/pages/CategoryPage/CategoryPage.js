@@ -53,7 +53,7 @@ const CategoryBG = styled.div`
 background-image: url(${imgBG});
 background-size: cover;
 width: 1400px;
-min-height: 980px;
+min-height: 1000px;
 `
 
 const CategoryHeader = styled.h2`

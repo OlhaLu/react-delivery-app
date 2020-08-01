@@ -14,8 +14,7 @@ const HomePage = () => (
             Moreover, food is certainly more than just a number of proteins, fats and carbohydrates.
             It’s the way to get some satisfaction after a long working day for the vast majority of people.</TitleDiscription>
             <SubTitle>In our catalog you will be able to choose the food that suits you by category and sort by those products that you like</SubTitle>
-            <TextClick>Please click to open <CatalogLink href={routes.CATEGORY_PAGE}>catalog</CatalogLink></TextClick>
-
+            <CatalogLink href={routes.CATEGORY_PAGE}>Please click to open catalog</CatalogLink>
         </ArticleContainer>
     </HomeWrapper>
 );
@@ -26,7 +25,7 @@ const HomeWrapper = styled.div`
 background-image: url(${imgBG});
 background-size: cover;
 width: 1400px;
-min-height: 980px;
+min-height: 1000px;
 `
 
 const ArticleContainer = styled.div`
@@ -59,17 +58,13 @@ width: 500px;
 margin-bottom: 30px;
 `
 
-const TextClick = styled.span`
-font-size: 22px;
-color: #F8F8FF;
-`
-
 const CatalogLink = styled.a`
+font-size: 22px;
 text-decoration: none;
 color:  #FFF8DC;
 
 &:hover {
-    background-color: #48D1CC;
-    color: white;
-  }
+    background-color: #63717f;
+    color:  #ADD8E6;
+}
 `
