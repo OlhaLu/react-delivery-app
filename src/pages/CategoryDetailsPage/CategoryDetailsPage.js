@@ -82,7 +82,7 @@ export default class ShowDetailsPage extends Component {
         </Form>
         <DetailsSearch>
           <DetailsList>
-            {values.map(item => (
+            {values && (values.map(item => (
               <DetailsItem key={item.id}>
                 <DetailsHeader>{item.name}</DetailsHeader>
                 <DetailsPrice>Price {item.price}</DetailsPrice>
@@ -93,7 +93,8 @@ export default class ShowDetailsPage extends Component {
                 />
                 <DetailsConsist>Ingredients: <br /> {item.consist}</DetailsConsist>
               </DetailsItem>
-            ))}
+            ))
+            )}
           </DetailsList>
         </DetailsSearch>
       </DetainsBG >

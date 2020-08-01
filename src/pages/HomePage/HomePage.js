@@ -38,6 +38,7 @@ height: 600px;
 const MainTitle = styled.h1`
 color: #FFF8DC;
 font-size: 36px;
+text-transform: uppercase;
 `
 
 const TitleDiscription = styled.p`
@@ -54,7 +55,7 @@ const SubTitle = styled.p`
 font-size: 22px;
 color: #ADD8E6;
 font-family: 'Open Sans Condensed', sans-serif;
-width: 500px;
+width: 600px;
 margin-bottom: 30px;
 `
 
