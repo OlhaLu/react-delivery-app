@@ -65,21 +65,23 @@ export default class ShowDetailsPage extends Component {
           type="button"
           onClick={this.handleGoCategoryPage}
         >
-          <span>go to Category</span>
+          <ButtonText>back to сategory</ButtonText>
         </ButtonToBackHome>
-        <Form
-          onSubmit={this.handleSubmit}>
-          <Input
-            type="text"
-            autoComplete="off"
-            value={query}
-            onChange={this.handleChange}
-            placeholder="Search by name"
-          />
-          <FormButton type="submit">
-            Find
-              </FormButton>
-        </Form>
+        <FormBlock>
+          <form
+            onSubmit={this.handleSubmit}>
+            <Input
+              type="text"
+              autoComplete="off"
+              value={query}
+              onChange={this.handleChange}
+              placeholder="Search by name"
+            />
+            <FormButton type="submit">
+              Find
+          </FormButton>
+          </form>
+        </FormBlock>
         <DetailsSearch>
           <DetailsList>
             {values && (values.map(item => (
@@ -120,7 +122,6 @@ const ButtonToBackHome = styled.button`
   color: #fff;
   background-color: #003300;
   border: none;
-  border-radius: 15px;
   box-shadow: 0 1px #999;
   margin: 30px 0 15px 30px;
 
@@ -140,8 +141,12 @@ const ButtonToBackHome = styled.button`
 }
 `
 
-const Form = styled.form`
-margin: 0 35px;
+const ButtonText = styled.span`
+text-transform: uppercase;
+`
+
+const FormBlock = styled.div`
+margin: 0 30px;
 `
 
 const FormButton = styled.button`
@@ -151,7 +156,7 @@ height: 50px;
 width: 50px;
 color: #4f5b66;
 opacity: 1;
-font-size: 10px;
+font-size: 18px;
 cursor: pointer;
 box-shadow: 0 2px 0 #000;
 
@@ -172,7 +177,7 @@ const Input = styled.input`
   width: 300px;
   height: 50px;
   border: none;
-  font-size: 10px;
+  font-size: 18px;
   text-shadow: 0 -1px 0 #000;
   float: left;
   color: #63717f;
@@ -210,7 +215,7 @@ column-count: 3;
 
 const DetailsItem = styled.li`
 display: inline-block;
-width: 80%;
+width: 90%;
 height: 100%;
 padding: 10px;
 margin: 0 10px 10px 0;
